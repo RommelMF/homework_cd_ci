@@ -41,8 +41,8 @@ jobs:
         pip install coverage
         coverage run manage.py test
     - name: Upload coverage to Codecov
-    - uses: codecov/codecov-action@v2
-      with:
+      uses: codecov/codecov-action@v2
+#      with:
 #        token: ${{ secrets.CODECOV }}
 #        directory: ./coverage/reports/
 #        env_vars: OS,PYTHON
