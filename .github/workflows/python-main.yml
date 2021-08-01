@@ -41,13 +41,15 @@ jobs:
         pip install coverage
         coverage run manage.py test
     - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v2
+      uses: codecov/codecov-action@v1
       with:
 #        token: ${{ secrets.CODECOV }}
 #        directory: ./coverage/reports/
 #        env_vars: OS,PYTHON
 #        fail_ci_if_error: true
         files: .coverage
+        ignore:
+          - '*/tests/*'
 #        flags: unittests
 #        name: codecov
 #        path_to_write_report: ./coverage/codecov_report.txt
